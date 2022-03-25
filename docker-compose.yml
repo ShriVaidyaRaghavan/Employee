@@ -1,0 +1,21 @@
+version: "3.7"
+services: 
+  springboot-app:
+   # container_name: spring-app
+    image: springboot-app-1
+    build: .
+    ports:
+      - 8091:5555
+    environment:
+      MYSQL_HOST: svar-doctor.cbvgdaawkqbe.us-east-1.rds.amazonaws.com
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 17121999
+      MYSQL_PORT: 3306
+  mysqldb: 
+    container_name: mysqldbImage
+    image: mysql
+    ports: 
+     - 3307:3306   
+    environment:
+      MYSQL_DATABASE: Employee
+      MYSQL_ROOT_PASSWORD: 17121999
