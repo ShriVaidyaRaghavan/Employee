@@ -3,6 +3,8 @@ package net.javaguides.springboot.controller;
 import java.util.Collections;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -49,13 +51,13 @@ public class EmployeeController {
 
 	// create user
 	@PostMapping
-	public Employee createUser(@RequestBody Employee user) {
+	public Employee createUser(@Valid @RequestBody Employee user) {
 		return this.userRepository.save(user);
 	}
 	
 	// update user
 	@PutMapping("/{id}")
-	public Employee updateUser(@RequestBody Employee user, @PathVariable ("iD") long userId) {
+	public Employee updateUser(@RequestBody Employee user, @PathVariable ("id") long userId) {
 		 Employee existingUser = this.userRepository.findById(userId)
 			.orElseThrow(() -> new ResourceNotFoundException("User not found with id :" + userId));
 		 existingUser.setFirstName(user.getName());

@@ -11,7 +11,7 @@
 	<groupId>net.javaguides</groupId>
 	<artifactId>springboot-crud-restful-webservices</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Employee</name>
+	<name>springboot-crud-restful-webservices</name>
 	<description>Demo project for Spring Boot Restful web services</description>
 
 	<properties>
