@@ -7,7 +7,7 @@ services:
     ports:
       - 8091:5555
     environment:
-      MYSQL_HOST: svar-employee.cb51j9rilsps.us-east-2.rds.amazonaws.com
+      MYSQL_HOST: svar-doctor.cbvgdaawkqbe.us-east-1.rds.amazonaws.com
       MYSQL_USER: root
       MYSQL_PASSWORD: 17121999
       MYSQL_PORT: 3306

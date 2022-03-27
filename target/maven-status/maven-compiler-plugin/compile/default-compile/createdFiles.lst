@@ -1,7 +1,5 @@
 net\javaguides\springboot\entity\Employee.class
-net\javaguides\springboot\exception\ErrorDetails.class
 net\javaguides\springboot\EmployeeInfoApplication.class
 net\javaguides\springboot\repository\EmployeeRepository.class
 net\javaguides\springboot\controller\EmployeeController.class
-net\javaguides\springboot\exception\GlobalExceptionHandler.class
 net\javaguides\springboot\exception\ResourceNotFoundException.class
