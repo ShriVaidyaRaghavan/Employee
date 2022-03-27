@@ -43,7 +43,7 @@ public class Employee implements Comparable<Employee> {
 		return Name;
 	}
 
-	public void setFirstName(String Name) {
+	public void setName(String Name) {
 		this.Name = Name;
 	}
 

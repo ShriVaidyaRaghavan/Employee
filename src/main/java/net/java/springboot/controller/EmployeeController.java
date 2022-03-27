@@ -49,7 +49,7 @@ public class EmployeeController {
 
 	// create user
 	@PostMapping
-	public Employee createUser(@Valid @RequestBody Employee user) {
+	public Employee createUser(@RequestBody Employee user) {
 		return this.userRepository.save(user);
 	}
 	
@@ -58,7 +58,7 @@ public class EmployeeController {
 	public Employee updateUser(@RequestBody Employee user, @PathVariable ("id") long userId) {
 		 Employee existingUser = this.userRepository.findById(userId)
 			.orElseThrow(() -> new ResourceNotFoundException("User not found with id :" + userId));
-		 existingUser.setFirstName(user.getName());
+		 existingUser.setName(user.getName());
 		 existingUser.setSalary(user.getSalary());
 		 existingUser.setDesignation(user.getDesignation());
 		 return this.userRepository.save(existingUser);
