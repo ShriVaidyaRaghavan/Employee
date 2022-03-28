@@ -3,8 +3,6 @@ package net.java.springboot.controller;
 import java.util.Collections;
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -46,6 +44,7 @@ public class EmployeeController {
 		return this.userRepository.findById(Id)
 				.orElseThrow(() -> new ResourceNotFoundException("User not found with Id :" + Id));
 	}
+	
 
 	// create user
 	@PostMapping
@@ -63,6 +62,17 @@ public class EmployeeController {
 		 existingUser.setDesignation(user.getDesignation());
 		 return this.userRepository.save(existingUser);
 	}
+	
+	@PutMapping("/update/{id}/{Salary}")
+	public Employee updateUser(@RequestBody Employee employee,@PathVariable long id, @PathVariable int Salary) {
+		Employee existingUser = this.userRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("User not found with id :" + id));
+			 existingUser.setName(employee.getName());
+			 existingUser.setSalary(employee.getSalary());
+			 existingUser.setDesignation(employee.getDesignation());
+			 return this.userRepository.save(existingUser);
+	}
+	
 	
 	// delete user by id
 	@DeleteMapping("/{id}")
